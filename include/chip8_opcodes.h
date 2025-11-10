@@ -4,14 +4,8 @@
 #include <type_traits>
 #include "chip8.h"
 #define CHIP8_OPCODE_SIG( func ) void func( Chip8& context, [[maybe_unused]] uint16_t opcode )
-using Chip8OpCodeFunc = void(*)(Chip8& context, uint16_t opcode);
-
-#ifdef CHIP8_DECLARE_OPCODES
 #define CHIP8_OPCODE( mask, code, func ) CHIP8_OPCODE_SIG( func );
-#else
-#define CHIP8_OPCODE( mask, code, func ) extern CHIP8_OPCODE_SIG( func );
-#endif
-
+using Chip8OpCodeFunc = CHIP8_OPCODE_SIG((*));
 #endif
 
 CHIP8_OPCODE( 0xffff, 0x00E0, op_clearDisplay )

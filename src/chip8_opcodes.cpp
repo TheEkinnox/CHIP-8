@@ -1,6 +1,4 @@
-#define CHIP8_DECLARE_OPCODES
 #include "chip8_opcodes.h"
-#undef CHIP8_DECLARE_OPCODES
 
 #include <cstdlib>
 
