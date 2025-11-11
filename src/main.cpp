@@ -9,10 +9,6 @@
 
 #include "raylib.h"
 
-// settings
-constexpr unsigned int SCR_WIDTH = 800;
-constexpr unsigned int SCR_HEIGHT = 600;
-
 int main(int argc, char** argv)
 {
 #if defined(_DEBUG) && defined(_MSC_VER)
